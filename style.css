@@ -277,50 +277,58 @@
 
 
 
-/* --- Mobile Responsive Enhancements --- */
+/* --- Mobile Layout & Header Spacing Fix --- */
 @media (max-width: 768px) {
+  /* Prevent horizontal shifting and keep main content centered */
   body {
-    padding: 10px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
   }
 
-  /* Adjust main container padding for phones */
-  .container, main {
-    padding: 15px;
+  /* Fix Header & Navigation Bar Spacing */
+  nav, .navbar, header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px !important; /* Adds healthy spacing away from screen edges */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Ensure navigation links don't crowd the top right */
+  .nav-links, nav ul {
+    display: flex;
+    gap: 15px; /* Creates spacing between About, Projects, Contact */
+  }
+
+  /* Keep main content centered on the page */
+  main, .container {
+    max-width: 100%;
+    margin: 0 auto !important; /* Forces strict horizontal centering */
+    padding: 0 20px !important;  /* Stops text/cards from touching side edges */
+    box-sizing: border-box;
+  }
+
+  /* Ensure Hero text and sections stay centered */
+  .hero, #contact, #about, #projects {
+    text-align: center;
     width: 100%;
   }
 
-  /* Hero section adjustments */
-  header h1, .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  /* Hero buttons stacking cleanly */
-  .hero-buttons, .cta-buttons {
+  /* Make buttons expand nicely without overflowing */
+  .hero-buttons, .contact-btns {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
     width: 100%;
   }
 
-  .hero-buttons .btn, .cta-buttons .btn {
+  .btn {
     width: 100%;
-    text-align: center;
-  }
-
-  /* Card spacing for mobile readability */
-  .card, .project-card, .about-card, .contact-card {
-    padding: 20px 15px;
-    margin-bottom: 20px;
-  }
-
-  /* Contact section buttons full width on mobile */
-  .contact-btns {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .contact-btns .btn {
-    width: 100%;
-    text-align: center;
+    max-width: 320px; /* Keeps buttons clean and readable on small screens */
+    box-sizing: border-box;
   }
 }
