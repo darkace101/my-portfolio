@@ -278,7 +278,7 @@
 
 
 /* --- Mobile Layout & Header Spacing Fix --- */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   /* Prevent horizontal shifting and keep main content centered */
   body {
     margin: 0;
